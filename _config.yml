@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: Welcome to Sujoy's space
 markdown: kramdown
+permalink: /blog/:year/:month/:day/:title
