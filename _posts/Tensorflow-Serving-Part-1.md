@@ -7,6 +7,7 @@ date: 2017-09-22
 # Tensorflow Serving in Enterprise Applications: Our Experience and Workarounds - Part 1
 
 *Sujoy Roy, Srinivasa Byaiah Ramachandra Reddy, Per Goncalves Da Silva*
+
 **SAP Leonardo ML Foundation**
 
 One of the major challenges in realising an intelligent enterprise is production-ready deployment of machine learning models. The need for a scalable, dynamic and fault-tolerant serving framework is paramount. In this article, we present our hands-on experiences working with Tensorflow Serving (TFS) - a flexible, high-performance serving system for machine learning models, designed for production environments. We specifically highlight several work arounds we successfully implemented to make it more enterprise ready.
@@ -25,7 +26,7 @@ Figure 1 reproduces the TFS architecture/block level control flow diagram [TFS-a
 
 
 
-![Figure 1](/_posts/images/fig1.jpg)
-Format: ![Alt Text](url)
+![Figure 1](https://github.com/tvkpz/_posts/images/fig1.jpg)
+#Format: ![Alt Text](url)
 
 
