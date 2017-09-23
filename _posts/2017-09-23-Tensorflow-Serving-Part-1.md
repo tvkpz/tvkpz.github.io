@@ -26,6 +26,10 @@ The entry point for the tensorflow_model_server is the file main.cc (model_serve
 
 Figure 1 reproduces the TFS architecture/block level control flow diagram [TFS-arch](https://www.tensorflow.org/serving/architecture_overview) with overlapping references to the functions from the code base that handles each of these blocks. 
 
-![Alt text](https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure1.png)
+<p align="center">
+  <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure1.jpg" width=676 height=450>
+</p>
+
+
 
 
