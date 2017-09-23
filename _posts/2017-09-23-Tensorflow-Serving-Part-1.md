@@ -18,9 +18,11 @@ Now what do we mean by “making tensorflow serving enterprise ready”? Tensorf
 
 Before we go into the details of what changes we made to TFS it is important to understand what is happening behind the hood in TFS. So first we present the sequence of steps that take place behind the scenes in bringing up a service with reference to the TFS code base. The TFS model server is started with the following call:
 
+{% highlight ruby %}
     bazel-bin/tensorflow_serving/model_servers/tensorflow_model_server 
     --enable_batching --port=9000 --model_name=inception   
     --model_base_path=/serving/inception
+{% endhighlight %}
 
 The entry point for the tensorflow_model_server is the file main.cc (model_servers/main.cc) which accepts a set of flags (minimally the model_name, model_base_path and the port) which define the default behaviour of the server. The main.cc uses this information to create a server_model_config proto. Then it creates a ServerCore (ref Fig. 1) using this proto to start a service instance.
 
