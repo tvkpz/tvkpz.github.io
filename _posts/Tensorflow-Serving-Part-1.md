@@ -26,7 +26,7 @@ Figure 1 reproduces the TFS architecture/block level control flow diagram [TFS-a
 
 
 
-![Figure 1](https://github.com/tvkpz/_posts/images/fig1.jpg)
-#Format: ![Alt Text](url)
+![Figure 1](https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure1.jpg)
+
 
 
