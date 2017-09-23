@@ -25,10 +25,10 @@ Before we go into the details of what changes we made to TFS it is important to 
 The entry point for the tensorflow_model_server is the file main.cc (model_servers/main.cc) which accepts a set of flags (minimally the model_name, model_base_path and the port) which define the default behaviour of the server. The main.cc uses this information to create a server_model_config proto. Then it creates a ServerCore (ref Fig. 1) using this proto to start a service instance.
 
 Figure 1 reproduces the TFS architecture/block level control flow diagram [TFS-arch](https://www.tensorflow.org/serving/architecture_overview) with overlapping references to the functions from the code base that handles each of these blocks. 
-
 <p align="center">
   <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure1.jpg" width=676 height=450>
 </p>
+Figure 1. TFS architecture mapped with essential functions from code base.
 
 
 
