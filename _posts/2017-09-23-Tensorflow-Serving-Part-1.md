@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sujoy Roy, TFS Improvements - Part1"
+title: "TFS Improvements - Part1"
 date: 2017-09-22
 ---
 
