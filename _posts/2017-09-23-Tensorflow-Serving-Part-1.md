@@ -162,7 +162,7 @@ We investigate the average response time using 1, 2 ,5 and 10 models with 200 us
 
 **Observations:**
 
-!([Figure 4](https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure4.jpg))
+![Figure 4](https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure4.jpg)
 <!--
 <p align="center">
   <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure4.jpg">
