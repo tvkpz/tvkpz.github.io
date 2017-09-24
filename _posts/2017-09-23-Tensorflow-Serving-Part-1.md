@@ -48,6 +48,7 @@ The service instance comprises of a **manager**, **source adapter / loader** and
 <p align="center">
   <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure2.jpg">
 </p>
+
 Figure 2: Component Interactions within *ServerCore*. ServerCore(2) first creates AspiredVersion Manager(3), then a Source Adapter is created(4) and connected to the manager(5). Further we create a Source(6) with Source Config pointing to the file system(7). Source is connected to the Source Adapter(8). Manager maintains the servable handle(9). Server is now ready and listening for incoming requests from the gRPC clients(10). 
 
 Figure 3. explains the decision process to load a new version of a servable involving the manager, source adapter and source. 
