@@ -91,13 +91,13 @@ For serving multiple versions we introduced the concept of a *model_config* file
 
 The version handling for a single model as presented above could use the following policy schemes:
 Policy for What to serve?
-	Latest Version (folder name with the highest number) (>r0.5)
-	All Versions (only >r0.5)
-	Specific Version (>r1.0)
+- Latest Version (folder name with the highest number) (>r0.5)
+- All Versions (only >r0.5)
+- Specific Version (>r1.0)
 
 Policy for How to serve a servable?
-●	Availability preserving by setting to AvailabilityPreservingPolicy
-●	Resource preserving by setting to ResourcePreservingPolicy
+- Availability preserving by setting to AvailabilityPreservingPolicy
+- Resource preserving by setting to ResourcePreservingPolicy
 
 The option for how to serve can be set as part of the *ServerCore* initialization in *main.cc*. Set *option.aspired_version_policy* to either of the above.
 
