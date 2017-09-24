@@ -48,17 +48,23 @@ Table 1: Mapping architecture components to code base.
 
 The service instance comprises of a **manager**, **source adapter / loader** and a **source**. The **source** polls the file system for model version servables in the model_base_path and uses the **source adapter** method to create a loader instance, which is sent as an aspired version to the **manager** to take a call. Thus the **source adapter /loader** (which can validate servables) is used to create loader objects for loading servables on the instruction of the manager. The **manager** is the ultimate authority in deciding whether a servable can be loaded based on understanding resource constraints. Figure 2. explains the above components and their interactions.
 
+![Figure 2](https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure2.jpg)
+<!--
 <p align="center">
   <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure2.jpg">
 </p>
+-->
 
 Figure 2: Component Interactions within *ServerCore*. ServerCore(2) first creates AspiredVersion Manager(3), then a Source Adapter is created(4) and connected to the manager(5). Further we create a Source(6) with Source Config pointing to the file system(7). Source is connected to the Source Adapter(8). Manager maintains the servable handle(9). Server is now ready and listening for incoming requests from the gRPC clients(10). 
 
 Figure 3. explains the decision process to load a new version of a servable involving the manager, source adapter and source. 
 
+![Figure 3](https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure3.jpg)
+<!--
 <p align="center">
   <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure3.jpg">
 </p>
+-->
 Figure 3: Process for loading a new version at runtime
 
 ## Serving A Single Model
@@ -156,9 +162,12 @@ We investigate the average response time using 1, 2 ,5 and 10 models with 200 us
 
 **Observations:**
 
+!([Figure 4](https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure4.jpg))
+<!--
 <p align="center">
   <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure4.jpg">
 </p>
+-->
 Figure 4. Request response wrt number of requests (threads) when serving multiple models in the same model container.
 
 From Figure 4 we can see that the response time running 10 models on the same resource is similar to that of running a single model. This means using the same resource we can serve 10 models instead of 1. We see the obvious that the average response time grows linearly with the number of requests but the variance due to serving different number of models has practically insignificant impact on the response time.
