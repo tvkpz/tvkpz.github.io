@@ -143,7 +143,10 @@ To get some practical experience with TensorFlow Serving's (TFS) performance, we
 **Set-up:** For the purposes of controlling the load sent to the server, we simulate a number of users (as threads) sending a predetermined number of requests to the server. The communication is done through gRPC (as this is protocol used by TFS). 
 For instance, we run an experiment starting from 1 to 10 threads (in steps of 1), with each thread submitting 100 requests against a TFS instance with two models (inception1 and inception2) and waiting 500ms between experiments:
 
-    bazel-bin/tensorflow_serving/example/client --server=localhost:9000 --    image_dir=./images --model_names=inception1,inception2 --num_requests=100 --num_threads_from=1 --num_threads_to=10 --num_threads_step=1 --experiment_sleep_time=0.5 --out_file=results.txt
+    bazel-bin/tensorflow_serving/example/client --server=localhost:9000 --image_dir=./images 
+    --model_names=inception1,inception2 --num_requests=100 --num_threads_from=1 
+    --num_threads_to=10 --num_threads_step=1 --experiment_sleep_time=0.5 --out_file=results.txt
+    
 All requests are directed to one of the inception models being served by the TFS instance without batching. As such, each request contains a model name (e.g. inception1, inception2, etc.) and the image the model should classify. Since the communication is done via gRPC using Protobuf messages, these messages need to be constructed before being sent to the server. Depending on the size of the image being sent for classification, this can take a while. To expedite the experiment, we do an offline pre-processing for all requests (number of models x number of images) and each thread randomly picks from the list which request it will send.
 
 We investigate the average response time using 1, 2 ,5 and 10 models with 200 users making 100 requests each.
