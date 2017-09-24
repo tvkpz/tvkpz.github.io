@@ -24,7 +24,8 @@ Before we go into the details of what changes we made to TFS it is important to 
 
 The entry point for the tensorflow_model_server is the file main.cc (model_servers/main.cc) which accepts a set of flags (minimally the model_name, model_base_path and the port) which define the default behaviour of the server. The main.cc uses this information to create a server_model_config proto. Then it creates a ServerCore (ref Fig. 1) using this proto to start a service instance.
 
-Figure 1 reproduces the TFS architecture/block level control flow diagram [TFS-arch](https://www.tensorflow.org/serving/architecture_overview) with overlapping references to the functions from the code base that handles each of these blocks. 
+Figure 1 reproduces the TFS architecture/block level control flow diagram [TFS-arch](https://www.tensorflow.org/serving/architecture_overview) with overlapping references to the functions from the code base that handles each of these blocks.
+
 <p align="center">
   <img src="https://github.com/tvkpz/tvkpz.github.io/tree/master/_posts/images/Figure1.png">
 </p>
@@ -56,7 +57,7 @@ Figure 3. explains the decision process to load a new version of a servable invo
 </p>
 Figure 3: Process for loading a new version at runtime
 
-##Serving A Single Model
+## Serving A Single Model
 
 TFS uses *BuildSingleModelConfig* method in *main.cc* to build a single model configuration (when no such configuration is provided) based on the *model_base_path*, *model_version_policy* and *model_name* provided as arguments to the model server. But this works for only single model all/latest version.
 
@@ -90,9 +91,9 @@ For serving multiple versions we introduced the concept of a *model_config* file
 
 The version handling for a single model as presented above could use the following policy schemes:
 Policy for What to serve?
-●	Latest Version (folder name with the highest number) (>r0.5)
-●	All Versions (only >r0.5)
-●	Specific Version (>r1.0)
+	Latest Version (folder name with the highest number) (>r0.5)
+	All Versions (only >r0.5)
+	Specific Version (>r1.0)
 
 Policy for How to serve a servable?
 ●	Availability preserving by setting to AvailabilityPreservingPolicy
@@ -106,7 +107,7 @@ One of the issues with single model deployment is that each deployment is run on
 
 To address this issue of deploying a containerized service in a K8S cluster we investigated the option of serving multiple models within the same container. Our proposed solution is addressed below.
 
-##Serving Multiple Models
+## Serving Multiple Models
 
 In the last section we introduced our contribution of providing a *model_config* file that contains all the meta-information needed for serving a single model and its multiple versions. The same *model_config* file could be used for serving several models and their multiple versions simultaneously.
 
