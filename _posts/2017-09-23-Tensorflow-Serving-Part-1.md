@@ -135,7 +135,7 @@ If the *model_config_flag* is set, the values passed to the *model_name* and *mo
         }
     }
 
-##Experimental Analysis
+## Experimental Analysis
 
 To get some practical experience with TensorFlow Serving's (TFS) performance, we measure the average response time for prediction requests to one or more Inception models served by a TFS instance hosted on an AWS P2 p2.xlarge instance (containing 1 GPU). The TFS server was compiled from source code with GPU enablement.
 
